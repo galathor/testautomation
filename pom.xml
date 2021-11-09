@@ -139,7 +139,7 @@
 	<dependency>
 		<groupId>org.testng</groupId>
 		<artifactId>testng</artifactId>
-		<version>7.4.0</version>
+		<version>6.14.3</version>
 		<scope>test</scope>
 	</dependency>
 	
@@ -166,9 +166,9 @@
         <version>${spring-format.version}</version>
         <executions>
           <execution>
-            <phase>validate</phase>
+            
             <goals>
-              <goal>validate</goal>
+              
             </goals>
           </execution>
         </executions>
