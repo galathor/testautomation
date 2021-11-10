@@ -7,3 +7,4 @@ Feature: PetClinic Operations
 		When Hit Petclinic on the browser
 		Then Enter "Karaca" in the search box
 		Then Search it 
+		Then Verify User

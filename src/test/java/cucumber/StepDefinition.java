@@ -1,12 +1,16 @@
 package cucumber;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,6 +41,15 @@ public class StepDefinition {
 	public void search_it() {
 		driver.findElement(By.cssSelector("input[id=\"lastName\"]")).sendKeys(Keys.ENTER);
 	}
-	
+	@Then("Verify User")
+	public void verify_user() throws InterruptedException {
+	    Assert.assertTrue(driver.findElement(By.cssSelector("a[href=\"11/edit\"]")).isDisplayed());
+		Thread.sleep(3000);
+
+	}
+	@After
+	public void quit_it() {
+		driver.quit();
+	}
 
 }
